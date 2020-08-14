@@ -12,6 +12,32 @@ body {
   font-weight: 400;
   text-align: center;
 }
+.cookie {
+  display: none;
+  font-size: 19px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  letter-spacing: -0.38px;
+  background-image: linear-gradient(91deg, #c2e7ff 2%, #caceff 100%);
+  z-index: 999;
+  position: relative;
+}
+.cookie .main {
+  text-align: left;
+}
+.cookie .emoji {
+  font-size: 24px;
+  padding-right: 4px;
+}
+.cookie .btn {
+  cursor: pointer;
+  color: #0046ff;
+  padding-left: 20px;
+}
+.cookie.show {
+  display: block;
+}
 .top {
   padding-top: 49px;
   padding-bottom: 50px;
@@ -175,8 +201,8 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.whywe .title:before{
-  content: '';
+.whywe .title:before {
+  content: "";
   position: absolute;
   right: calc(57% + 48px);
   bottom: 0;
@@ -201,7 +227,8 @@ body {
   width: 190px;
   height: 190px;
 }
-.whywe .item .left .number {position: relative;
+.whywe .item .left .number {
+  position: relative;
   width: 93px;
   height: 93px;
   font-size: 100px;
@@ -233,22 +260,34 @@ body {
     rgba(255, 0, 179, 0.95) 100%
   );
 }
-.whywe .item .left .number:before{
-  content: '';
+.whywe .item .left .number:before {
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: .15;
+  opacity: 0.15;
   border-radius: 46px;
-  background-image: linear-gradient(128deg, #3d00ff 1%, rgba(0, 164, 255, 0.95) 90%);
+  background-image: linear-gradient(
+    128deg,
+    #3d00ff 1%,
+    rgba(0, 164, 255, 0.95) 90%
+  );
 }
-.whywe .item.two .left .number:before{
-  background-image: linear-gradient(128deg, rgba(66, 0, 255, 0.95) 1%, rgba(164, 0, 215, 0.98) 90%);
+.whywe .item.two .left .number:before {
+  background-image: linear-gradient(
+    128deg,
+    rgba(66, 0, 255, 0.95) 1%,
+    rgba(164, 0, 215, 0.98) 90%
+  );
 }
-.whywe .item.three .left .number:before{
-  background-image: linear-gradient(128deg, #8300ff 1%, rgba(255, 0, 179, 0.95) 90%);
+.whywe .item.three .left .number:before {
+  background-image: linear-gradient(
+    128deg,
+    #8300ff 1%,
+    rgba(255, 0, 179, 0.95) 90%
+  );
 }
 .whywe .item .right {
   width: 57%;
