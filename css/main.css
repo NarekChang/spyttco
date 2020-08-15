@@ -1,5 +1,6 @@
 @font-face {
   font-family: "GraphikLCWeb";
+  font-weight: 200;
   src: url("../fonts/Graphik-Regular-Web.woff") format("woff");
 }
 @font-face {
@@ -7,9 +8,14 @@
   font-weight: 600;
   src: url("../fonts/Graphik-Bold-Web.woff") format("woff");
 }
-body {
+@font-face {
   font-family: "GraphikLCWeb";
   font-weight: 400;
+  src: url("../fonts/Graphik-Medium-Web.woff") format("woff");
+}
+body {
+  font-family: "GraphikLCWeb";
+  font-weight: 300;
   text-align: center;
 }
 .cookie {
@@ -590,6 +596,190 @@ body {
   max-width: 300px;
   width: 100%;
 }
+.modal-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.modal-wrap.show{
+  display: flex;
+}
+.modal-wrap .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-color: #2e2e2e;
+  opacity: 0.6;
+}
+.modal-wrap .block {
+  position: relative;
+  margin: auto;
+  padding: 0 50px;
+  min-width: 600px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 20px;
+}
+.modal-wrap .block .title {
+  padding-top: 40px;
+  padding-bottom: 29px;
+  font-size: 38px;
+  color: #111111;
+  font-weight: 600;
+  letter-spacing: -0.76px;
+  text-align: center;
+  line-height: 46px;
+}
+.modal-wrap .block .footer {
+  padding-top: 21px;
+  padding-bottom: 28px;
+  font-size: 19px;
+  color: #878787;
+  letter-spacing: -0.38px;
+  text-align: center;
+  font-weight: 200;
+}
+.modal-wrap .block .content {
+  display: none;
+}
+.modal-wrap .block input#login:checked ~ .switch_block .content.login,
+.modal-wrap .block input#reg:checked ~ .switch_block .content.reg {
+  display: block;
+}
+.modal-wrap .block .tabbar {
+  margin-bottom: 30px;
+  opacity: 0.8;
+  background: #d8dce3;
+  border-radius: 10px;
+  display: flex;
+  padding: 2px;
+  box-sizing: border-box;
+}
+.modal-wrap .block .tabbar .tab {
+  width: 50%;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 22px;
+  color: #111111;
+  letter-spacing: -0.44px;
+  text-align: center;
+  line-height: 36px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s ease-in-out;
+}
+.modal-wrap .block input#login:checked ~ .switch_block .tabbar .tab.login,
+.modal-wrap .block input#reg:checked ~ .switch_block .tabbar .tab.reg {
+  background: #ffffff;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+  color: #007bff;
+  transition: all 0.2s ease-in-out;
+}
+.modal-wrap .block .btn {
+  position: relative;
+  padding: 9px 0;
+  margin-top: 30px;
+  font-size: 22px;
+  color: #ffffff;
+  letter-spacing: -0.44px;
+  line-height: 36px;
+  background-image: linear-gradient(180deg, #21a0ff 3%, #295fff 100%);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.modal-wrap .block .btn:hover {
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+.modal-wrap .block .btn:after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 25px;
+  height: 25px;
+  background: url(../img/arr.png) left top no-repeat;
+  background-size: contain;
+}
+.modal-wrap .block .text_block {
+  position: relative;
+  margin-bottom: 10px;
+}
+.modal-wrap .block .text_block .error_ico,
+.modal-wrap .block .text_block .ico {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 32px;
+}
+.modal-wrap .block .text_block input {
+  width: 100%;
+  padding: 12px 0;
+  padding-left: 65px;
+  padding-right: 54px;
+  background: #e9ebf0;
+  border-radius: 10px;
+  font-size: 22px;
+  color: rgb(17, 17, 17);
+  letter-spacing: -0.44px;
+  line-height: 36px;
+  font-weight: 300;
+  outline: none;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+}
+.modal-wrap .block .text_block input:focus {
+  background-color: #fff;
+  border-color: #2588ff;
+}
+.modal-wrap .block .text_block .error_ico {
+  display: none;
+  left: auto;
+  right: 20px;
+}
+.modal-wrap .block .text_block.error .error_ico {
+  display: block;
+}
+.modal-wrap .block .text_block.error:before {
+  content: "Кажется, вы опечатались, так не пойдёт";
+  position: absolute;
+  left: 22px;
+  bottom: 100%;
+  padding: 9px 21px;
+  font-size: 19px;
+  color: #fff;
+  letter-spacing: -0.38px;
+  text-align: center;
+  background: #f02a2e;
+  border-radius: 10px;
+}
+.modal-wrap .block .text_block.error:after {
+  content: "";
+  position: absolute;
+  left: 57px;
+  bottom: 100%;
+  margin-bottom: -9px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 9px 9px 0 9px;
+  border-color: #F02A2E transparent transparent transparent;
+}
 .main {
   display: inline-block;
   width: 100%;
@@ -618,6 +808,9 @@ body {
 }
 .color__blue {
   color: #0046ff !important;
+}
+.color__grey {
+  color: #878787 !important;
 }
 .link {
   text-decoration: none;
